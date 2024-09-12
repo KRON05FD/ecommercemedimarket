@@ -1,0 +1,114 @@
+/* Estilos básicos */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Estilo para el encabezado */
+header {
+    background-color: #00acc1; /* Color cian */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    margin: 5px 0 0;
+}
+
+/* Estilo para el menú de navegación */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Estilo para el contenido principal */
+main {
+    padding: 20px;
+}
+
+/* Estilo para el buscador y filtro */
+#buscador {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #00acc1; /* Color cian */
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+#categoria {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #00acc1; /* Color cian */
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+/* Estilo para la lista de productos y carrito */
+#lista-productos, #lista-carrito {
+    list-style: none;
+    padding: 0;
+}
+
+#lista-productos li, #lista-carrito li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#lista-carrito li button {
+    margin-left: 10px;
+    background-color: #ff5722; /* Color naranja */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilo para el formulario de registro */
+#registro {
+    margin-top: 20px;
+}
+
+#registro label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#registro input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Estilo para el pie de página */
+footer {
+    background-color: #00acc1; /* Color cian */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
