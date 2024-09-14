@@ -23,9 +23,13 @@ window.onclick = function(event) {
 // Función para registrar un usuario (demo)
 function registrarUsuario(event) {
     event.preventDefault(); // Evita el envío del formulario
-    alert("Registro exitoso.");
-    var modal = document.getElementById('modal-registro');
-    modal.style.display= 'none';
+    var nombre = document.getElementById('nombre').value;
+    var email = document.getElementById('email').value;
+    setTimeout(() => {
+        alert(`¡Registro exitoso! se envio un correo para confirmar el registro a ${email}.`);
+        var modal = document.getElementById('modal-registro');
+        modal.style.display= 'none';
+    }, 1000);
 }
 
 // Función para buscar productos por nombre
