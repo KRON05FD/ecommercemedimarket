@@ -4,17 +4,17 @@ var btnAbrirModal = document.getElementById('btn-abrir-modal');
 var spanCerrar = document.getElementsByClassName('cerrar')[0];
 
 // Abrir modal al hacer clic en el botón de "Registrarse"
-btnAbrirModal.onclick = function() {
+btnAbrirModal.onclick = function () {
     modal.style.display = 'flex';
 }
 
 // Cerrar modal al hacer clic en la "X"
-spanCerrar.onclick = function() {
+spanCerrar.onclick = function () {
     modal.style.display = 'none';
 }
 
 // Cerrar modal al hacer clic fuera del contenido del modal
-window.onclick = function(event) {
+window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = 'none';
     }
@@ -28,7 +28,7 @@ function registrarUsuario(event) {
     setTimeout(() => {
         alert(`¡Registro exitoso! se envio un correo para confirmar el registro a ${email}.`);
         var modal = document.getElementById('modal-registro');
-        modal.style.display= 'none';
+        modal.style.display = 'none';
     }, 1000);
 }
 
