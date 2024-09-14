@@ -1,22 +1,37 @@
-// Variables para el modal
-var modal = document.getElementById('modal-registro');
-var btnAbrirModal = document.getElementById('btn-abrir-modal');
-var spanCerrar = document.getElementsByClassName('cerrar')[0];
+// Variables para los modales
+var modalRegistro = document.getElementById('modal-registro');
+var modalLogin = document.getElementById('modal-login');
+var btnAbrirModalRegistro = document.getElementById('btn-abrir-modal');
+var btnAbrirModalLogin = document.getElementById('btn-abrir-login');
+var spanCerrarRegistro = document.getElementsByClassName('cerrar')[0];
+var spanCerrarLogin = document.getElementsByClassName('cerrar')[1];
 
-// Abrir modal al hacer clic en el botón de "Registrarse"
-btnAbrirModal.onclick = function() {
-    modal.style.display = 'flex';
+// Abrir modal de registro al hacer clic en el botón de "Registrarse"
+btnAbrirModalRegistro.onclick = function () {
+    modalRegistro.style.display = 'flex';
+}
+
+// Abrir modal de inicio de sesión al hacer clic en el botón de "Iniciar sesión"
+btnAbrirModalLogin.onclick = function () {
+    modalLogin.style.display = 'flex';
 }
 
 // Cerrar modal al hacer clic en la "X"
-spanCerrar.onclick = function() {
-    modal.style.display = 'none';
+spanCerrarRegistro.onclick = function () {
+    modalRegistro.style.display = 'none';
+}
+
+spanCerrarLogin.onclick = function () {
+    modalLogin.style.display = 'none';
 }
 
 // Cerrar modal al hacer clic fuera del contenido del modal
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = 'none';
+window.onclick = function (event) {
+    if (event.target == modalRegistro) {
+        modalRegistro.style.display = 'none';
+    }
+    if (event.target == modalLogin) {
+        modalLogin.style.display = 'none';
     }
 }
 
@@ -26,9 +41,19 @@ function registrarUsuario(event) {
     var nombre = document.getElementById('nombre').value;
     var email = document.getElementById('email').value;
     setTimeout(() => {
-        alert(`¡Registro exitoso! se envio un correo para confirmar el registro a ${email}.`);
-        var modal = document.getElementById('modal-registro');
-        modal.style.display= 'none';
+        alert(`¡Registro exitoso! Se envió un correo para confirmar el registro a ${email}.`);
+        modalRegistro.style.display = 'none';
+    }, 1000);
+}
+
+// Función para iniciar sesión (demo)
+function iniciarSesion(event) {
+    event.preventDefault(); // Evita el envío del formulario
+    var email = document.getElementById('email-login').value;
+    var password = document.getElementById('password-login').value;
+    setTimeout(() => {
+        alert(`¡Inicio de sesión exitoso! Bienvenido ${email}.`);
+        modalLogin.style.display = 'none';
     }, 1000);
 }
 
