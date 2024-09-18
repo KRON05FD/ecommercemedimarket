@@ -23,22 +23,24 @@ btnAbrirLogin.onclick = function () {
     modalLogin.style.display = 'flex';
 }
 
-// Abrir modal de gestión de datos personales al hacer clic en el ícono de cuenta
+// Cerrar modal de inicio de sesión al hacer clic en la "X"
+spanCerrarLogin.onclick = function () {
+    modalLogin.style.display = 'none';
+}
+
+// Variables para el modal de gestion de datos
 var modalGestionDatos = document.getElementById('modal-gestion-datos');
 var btnAbrirGestionDatos = document.getElementById('btn-abrir-gestion-datos');
 var spanCerrarGestionDatos = modalGestionDatos.getElementsByClassName('cerrar')[0];
 
+// Abril modal de gestion de datos
 btnAbrirGestionDatos.onclick = function () {
     modalGestionDatos.style.display = 'flex';
 }
 
+// Cerrar modal de gestion de datos al hacer clic en la "X"
 spanCerrarGestionDatos.onclick = function () {
     modalGestionDatos.style.display = 'none';
-}
-
-// Cerrar modal de inicio de sesión al hacer clic en la "X"
-spanCerrarLogin.onclick = function () {
-    modalLogin.style.display = 'none';
 }
 
 // Cerrar los modales al hacer clic fuera del contenido del modal
@@ -48,6 +50,9 @@ window.onclick = function (event) {
     }
     if (event.target == modalLogin) {
         modalLogin.style.display = 'none';
+    }
+    if (event.target == modalGestionDatos) {
+        modalGestionDatos.style.display = 'none';
     }
 }
 
