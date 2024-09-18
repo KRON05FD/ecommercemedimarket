@@ -1,0 +1,236 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilos para encabezado y navegación */
+header {
+    background-color: #00acc1;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    margin: 5px 0 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    color: #ffccbc;
+}
+
+/* Contenedor para los botones de sesión, registro e ícono de cuenta */
+.btn-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px; /* Espacio entre botones */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+/* Estilo general de los botones */
+.btn-registro {
+    background-color: #006064;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-registro:hover {
+    background-color: #e64a19;
+}
+
+/* Estilos para el botón del ícono de cuenta */
+.btn-gestion-datos {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-gestion-datos img {
+    width: 24px;
+    height: 24px;
+}
+
+.btn-gestion-datos:hover img {
+    opacity: 0.7;
+}
+/* Estilos para la sección de productos */
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+section img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+#productos h2 {
+    margin-bottom: 20px;
+}
+
+#productos ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+#productos li {
+    padding: 15px;
+    background-color: #e0f7fa;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#productos li:hover {
+    background-color: #b2ebf2;
+}
+
+/* Estilos para el buscador y filtro de categorías */
+#buscador {
+    padding: 10px;
+    width: 50%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+#categoria {
+    padding: 10px;
+    width: 50%;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Estilos para el carrito de compras */
+#carrito {
+    padding: 20px;
+    background-color: #eeeeee;
+    border-radius: 10px;
+}
+
+/* Estilos para los modales */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-contenido {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+/* Estilo para los botones de cerrar modal */
+.cerrar {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.cerrar:hover,
+.cerrar:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Estilos para los formularios de registro, inicio de sesion y actualizacion de datos */
+#form-registro,#form-gestion-datos,
+#form-login {
+    display: flex;
+    flex-direction: column;
+}
+
+#form-registro label,#form-gestion-datos label,
+#form-login label {
+    margin-bottom: 10px;
+}
+
+#form-registro input,#form-gestion-datos input,
+#form-login input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+#form-registro button,#form-gestion-datos button,
+#form-login button {
+    padding: 10px;
+    background-color: #00acc1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+} 
+
+/* Estilos para el footer */
+footer {
+    background-color: #00acc1;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
