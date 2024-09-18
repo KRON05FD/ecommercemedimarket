@@ -55,11 +55,19 @@ nav ul li a:hover {
     color: #ffccbc;
 }
 
-/* Estilos para el boton de inicio de sesión */
-.btn-registro {
+/* Contenedor para los botones de sesión, registro e ícono de cuenta */
+.btn-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px; /* Espacio entre botones */
     position: absolute;
     top: 20px;
     right: 20px;
+}
+
+/* Estilo general de los botones */
+.btn-registro {
     background-color: #006064;
     color: white;
     border: none;
@@ -72,7 +80,22 @@ nav ul li a:hover {
     background-color: #e64a19;
 }
 
-/* Estilos para la sección de los productos */
+/* Estilos para el botón del ícono de cuenta */
+.btn-gestion-datos {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-gestion-datos img {
+    width: 24px;
+    height: 24px;
+}
+
+.btn-gestion-datos:hover img {
+    opacity: 0.7;
+}
+/* Estilos para la sección de productos */
 section {
     padding: 20px;
     text-align: center;
@@ -131,7 +154,7 @@ section img {
     border-radius: 10px;
 }
 
-/* Estilos para el modal */
+/* Estilos para los modales */
 .modal {
     display: none;
     position: fixed;
@@ -156,7 +179,7 @@ section img {
     text-align: left;
 }
 
-/* Estilo para el botón de cerrar modal */
+/* Estilo para los botones de cerrar modal */
 .cerrar {
     color: #aaa;
     float: right;
@@ -171,46 +194,35 @@ section img {
     cursor: pointer;
 }
 
-/* Estilos para el formulario de inicio de sesión y registro */
-#form-registro {
+/* Estilos para los formularios de registro, inicio de sesion y actualizacion de datos */
+#form-registro,#form-gestion-datos,
+#form-login {
     display: flex;
     flex-direction: column;
 }
 
-#form-registro label {
+#form-registro label,#form-gestion-datos label,
+#form-login label {
     margin-bottom: 10px;
-    font-weight: bold;
 }
 
-#form-registro input {
+#form-registro input,#form-gestion-datos input,
+#form-login input {
     padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
+    margin-bottom: 10px;
     border-radius: 5px;
+    border: 1px solid #ddd;
 }
 
-#form-registro button {
+#form-registro button,#form-gestion-datos button,
+#form-login button {
     padding: 10px;
     background-color: #00acc1;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-}
-
-#form-registro button:hover {
-    background-color: #007c91;
-}
-
-/* Estilos para los enlaces en el modal */
-.modal p a {
-    color: #00acc1;
-    font-weight: bold;
-}
-
-.modal p a:hover {
-    color: #007c91;
-}
+} 
 
 /* Estilos para el footer */
 footer {
