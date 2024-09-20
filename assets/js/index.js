@@ -1,10 +1,13 @@
 // Variables para los modales
 var modalRegistro = document.getElementById('modal-registro');
 var modalLogin = document.getElementById('modal-login');
+var modalCarrito = document.getElementById('modal-carrito-de-compras');
 var btnAbrirModalRegistro = document.getElementById('btn-abrir-modal');
 var btnAbrirModalLogin = document.getElementById('btn-abrir-login');
+var btnAbrirModalCarrito = document.getElementById('btn-abrir-carrito');
 var spanCerrarRegistro = document.getElementsByClassName('cerrar')[0];
 var spanCerrarLogin = document.getElementsByClassName('cerrar')[1];
+var spanCerrarCarrito = document.getElementById('cerrar-carrito');
 
 // Abrir modal de registro al hacer clic en el botón de "Registrarse"
 btnAbrirModalRegistro.onclick = function () {
@@ -12,8 +15,13 @@ btnAbrirModalRegistro.onclick = function () {
 }
 
 // Abrir modal de inicio de sesión al hacer clic en el botón de "Iniciar sesión"
-btnAbrirModalLogin.onclick = function () {
-    modalLogin.style.display = 'flex';
+// btnAbrirModalLogin.onclick = function () {
+//     modalLogin.style.display = 'flex';
+// }
+
+// Abrir modal de carrito al hacer clic en el botón de "Carrito"
+btnAbrirModalCarrito.onclick = function () {
+    modalCarrito.style.display = 'flex';
 }
 
 // Cerrar modal al hacer clic en la "X"
@@ -23,6 +31,10 @@ spanCerrarRegistro.onclick = function () {
 
 spanCerrarLogin.onclick = function () {
     modalLogin.style.display = 'none';
+}
+
+spanCerrarCarrito.onclick = function () {
+    modalCarrito.style.display = 'none';
 }
 
 // Cerrar modal al hacer clic fuera del contenido del modal

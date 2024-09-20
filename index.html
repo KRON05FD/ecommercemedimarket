@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Medimarket - Tu farmacia en línea</title>
-  <link rel="stylesheet" href="assets/css/index.css" /> <!-- link al archivo css de estilos -->
-</head>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Medimarket - Tu farmacia en línea</title>
+    <link rel="stylesheet" href="assets/css/index.css" /> <!-- link al archivo css de estilos -->
+  </head>
 <body>
   <header>
     <nav>
@@ -19,19 +17,20 @@
         <li><a href="#carrito">Carrito</a></li>
       </ul>
       <button id="btn-abrir-modal" class="btn-registro">Iniciar sesión</button>
+      <a id="btn-abrir-carrito"><img class="btn-carrito" src="assets/img/Shopping cart.jpg" alt="logo"></a>
     </nav>
     <h1>Bienvenido a Medimarket</h1>
     <p>Tu farmacia en línea de confianza</p>
   </header>
-
   <main>
     <section id="inicio">
       <h2>Nuestros productos</h2>
       <p>
-        Descubre una amplia variedad de medicamentos, vitaminas y productos de
-        salud.
+        Descubre nuestra amplia selección de productos de salud,
+      con una diversidad de laboratorios para medicamentos y
+        suplementos vitamínicos; además los mejores equipos ortopédicos.
       </p>
-      <img src="assets/img/StockCake-Pharmacy Shelf Restocking_1726026978.jpg" alt="Productos de farmacia" />
+      <img src="assets/img/StockCake-Pharmacy Shelf Restocking_1726026978.jpg" alt="Productos de farmacia"/>
     </section>
 
     <section id="productos">
@@ -40,26 +39,26 @@
       <!-- Búsqueda básica de productos -->
       <input type="text" id="buscador" placeholder="Buscar producto..." onkeyup="buscarProducto()" />
 
-      <!-- Filtro por categoría -->
-      <select id="categoria" onchange="filtrarPorCategoria()">
-        <option value="">Todas las categorías</option>
-        <option value="Medicamentos">Medicamentos</option>
-        <option value="Vitaminas y suplementos">
-          Vitaminas y suplementos
-        </option>
-        <option value="Cuidado personal">Cuidado personal</option>
-        <option value="Equipo médico">Equipo médico</option>
-      </select>
+        <!-- Filtro por categoría -->
+        <select id="categoria" onchange="filtrarPorCategoria()">
+          <option value="">Todas las categorías</option>
+          <option value="Medicamentos">Medicamentos</option>
+          <option value="Vitaminas y suplementos">
+            Vitaminas y suplementos
+          </option>
+          <option value="Cuidado personal">Cuidado personal</option>
+          <option value="Equipo médico">Equipo médico</option>
+        </select>
 
-      <ul id="lista-productos">
-        <li data-categoria="Medicamentos">Medicamentos</li>
-        <li data-categoria="Vitaminas y suplementos">
-          Vitaminas y suplementos
-        </li>
-        <li data-categoria="Cuidado personal">Cuidado personal</li>
-        <li data-categoria="Equipo médico">Equipo médico</li>
-      </ul>
-    </section>
+        <ul id="lista-productos">
+          <li data-categoria="Medicamentos">Medicamentos</li>
+          <li data-categoria="Vitaminas y suplementos">
+            Vitaminas y suplementos
+          </li>
+          <li data-categoria="Cuidado personal">Cuidado personal</li>
+          <li data-categoria="Equipo médico">Equipo médico</li>
+        </ul>
+      </section>
 
     <footer>
       <p>Medimarket &copy; 2024 - Todos los derechos reservados</p>
@@ -78,6 +77,15 @@
           <button type="submit">Iniciar sesión</button>
         </form>
         <p>¿No tienes una cuenta? <a href="#registro" onclick="mostrarRegistro()">Regístrate aquí</a></p>
+      </div>
+    </div>
+
+     <!-- Modal de Carrito de Compras -->
+     <div id="modal-carrito-de-compras" class="modal">
+      <div class="modal-contenido">
+        <span id="cerrar-carrito" class="cerrar">&times;</span>
+        <h2>Carrito de compras</h2>
+        <p>Agregar Productos al Carrito<a href="#Productos" onclick="MostrarProducto()"> Regístra aquí</a></p>
       </div>
     </div>
 
@@ -104,5 +112,4 @@
 
     <script src="assets/js/index.js"></script> <!-- llama al archivo JS -->
   </body>
-
 </html>

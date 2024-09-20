@@ -72,6 +72,25 @@ nav ul li a:hover {
     background-color: #e64a19;
 }
 
+/* Estilos para el botón del carrito de compras */
+.btn-carrito {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 75px;
+    height: 40px;
+    background-color: #006064;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-carrito:hover {
+    background-color: #e64a19;
+}
+
 /* Estilos para la sección de los productos */
 section {
     padding: 20px;
