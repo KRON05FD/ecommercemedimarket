@@ -47,7 +47,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: #ffffff;
     font-size: 18px;
 }
 
@@ -55,13 +55,21 @@ nav ul li a:hover {
     color: #ffccbc;
 }
 
-/* Estilos para el boton de inicio de sesión */
-.btn-registro {
+/* Contenedor para los botones de sesión, registro e ícono de cuenta */
+.btn-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px; /* Espacio entre botones */
     position: absolute;
     top: 20px;
     right: 20px;
+}
+
+/* Estilo general de los botones */
+.btn-registro {
     background-color: #006064;
-    color: white;
+    color: #ffffff;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -72,7 +80,23 @@ nav ul li a:hover {
     background-color: #e64a19;
 }
 
-/* Estilos para la sección de los productos */
+/* Estilos para el botón del ícono de cuenta */
+.btn-gestion-datos {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-gestion-datos img {
+    width: 24px;
+    height: 24px;
+}
+
+.btn-gestion-datos:hover img {
+    opacity: 0.7;
+}
+
+/* Estilos para la sección de productos */
 section {
     padding: 20px;
     text-align: center;
@@ -86,42 +110,95 @@ section img {
     border-radius: 10px;
 }
 
-#productos h2 {
-    margin-bottom: 20px;
+/* Estilos para el carrusel de productos */
+#carrusel-productos {
+    text-align: center; /* Centra el texto dentro de la sección */
+    padding: 20px 0;   /* Espaciado superior e inferior */
 }
 
-#productos ul {
+.carrusel {
+    display: flex;
+    justify-content: center; /* Centra los elementos dentro del carrusel */
+    overflow: hidden;        /* Oculta el desbordamiento lateral */
+}
+
+#lista-productos {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajusta automáticamente el número de columnas */
     gap: 20px;
+    justify-content: center; /* Centra los productos horizontalmente */
+    padding: 0;
+    margin-top: 20px;
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin-left: auto; /* Centra horizontalmente */
+    margin-right: auto; /* Centra horizontalmente */
 }
 
-#productos li {
-    padding: 15px;
+/* Estilos para los productos */
+.producto {
     background-color: #e0f7fa;
     border-radius: 10px;
+    padding: 15px;
     transition: background-color 0.3s ease;
+    text-align: center; /* Centra el contenido del producto */
 }
 
-#productos li:hover {
-    background-color: #b2ebf2;
+.producto:hover {
+    background-color: #00acc1;
+}
+
+/* Estilos para el contenido dentro de los productos */
+.producto h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.producto img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+.producto p {
+    font-size: 1rem;
+    color: #666;
 }
 
 /* Estilos para el buscador y filtro de categorías */
 #buscador {
     padding: 10px;
-    width: 50%;
+    width: 60%;
+    max-width: 500px;
     margin-bottom: 20px;
     border-radius: 5px;
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #categoria {
     padding: 10px;
-    width: 50%;
+    width: 60%;
+    max-width: 500px;
     margin-bottom: 20px;
     border-radius: 5px;
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+/* Estilos responsive para dispositivos móviles */
+@media (max-width: 768px) {
+    #buscador,
+    #categoria {
+        width: 90%;
+    }
+
+    #lista-productos {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
 }
 
 /* Estilos para el carrito de compras */
@@ -131,7 +208,7 @@ section img {
     border-radius: 10px;
 }
 
-/* Estilos para el modal */
+/* Estilos para los modales */
 .modal {
     display: none;
     position: fixed;
@@ -156,7 +233,7 @@ section img {
     text-align: left;
 }
 
-/* Estilo para el botón de cerrar modal */
+/* Estilo para los botones de cerrar modal */
 .cerrar {
     color: #aaa;
     float: right;
@@ -171,25 +248,32 @@ section img {
     cursor: pointer;
 }
 
-/* Estilos para el formulario de inicio de sesión y registro */
-#form-registro {
+/* Estilos para los formularios de registro, inicio de sesión y actualización de datos */
+#form-registro,
+#form-gestion-datos,
+#form-login {
     display: flex;
     flex-direction: column;
 }
 
-#form-registro label {
+#form-registro label,
+#form-gestion-datos label,
+#form-login label {
     margin-bottom: 10px;
-    font-weight: bold;
 }
 
-#form-registro input {
+#form-registro input,
+#form-gestion-datos input,
+#form-login input {
     padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
+    margin-bottom: 10px;
     border-radius: 5px;
+    border: 1px solid #ddd;
 }
 
-#form-registro button {
+#form-registro button,
+#form-gestion-datos button,
+#form-login button {
     padding: 10px;
     background-color: #00acc1;
     color: white;
@@ -198,27 +282,13 @@ section img {
     cursor: pointer;
 }
 
-#form-registro button:hover {
-    background-color: #007c91;
-}
-
-/* Estilos para los enlaces en el modal */
-.modal p a {
-    color: #00acc1;
-    font-weight: bold;
-}
-
-.modal p a:hover {
-    color: #007c91;
-}
-
 /* Estilos para el footer */
 footer {
     background-color: #00acc1;
-    color: white;
+    color: #ffffff;
     text-align: center;
     padding: 10px;
-    position: fixed;
+    position: sticky;
     bottom: 0;
     width: 100%;
 }

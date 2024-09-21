@@ -1,31 +1,49 @@
-// Variables para los modales
+// Variables para el modal de registro
 var modalRegistro = document.getElementById('modal-registro');
-var modalLogin = document.getElementById('modal-login');
-var btnAbrirModalRegistro = document.getElementById('btn-abrir-modal');
-var btnAbrirModalLogin = document.getElementById('btn-abrir-login');
-var spanCerrarRegistro = document.getElementsByClassName('cerrar')[0];
-var spanCerrarLogin = document.getElementsByClassName('cerrar')[1];
+var btnAbrirRegistro = document.getElementById('btn-abrir-registro');
+var spanCerrarRegistro = modalRegistro.getElementsByClassName('cerrar')[0];
 
-// Abrir modal de registro al hacer clic en el botón de "Registrarse"
-btnAbrirModalRegistro.onclick = function () {
+// Abrir modal de registro al hacer clic en el botón "Registrarse"
+btnAbrirRegistro.onclick = function () {
     modalRegistro.style.display = 'flex';
 }
 
-// Abrir modal de inicio de sesión al hacer clic en el botón de "Iniciar sesión"
-btnAbrirModalLogin.onclick = function () {
-    modalLogin.style.display = 'flex';
-}
-
-// Cerrar modal al hacer clic en la "X"
+// Cerrar modal de registro al hacer clic en la "X"
 spanCerrarRegistro.onclick = function () {
     modalRegistro.style.display = 'none';
 }
 
+// Variables para el modal de inicio de sesión
+var modalLogin = document.getElementById('modal-login');
+var btnAbrirLogin = document.getElementById('btn-abrir-login');
+var spanCerrarLogin = modalLogin.getElementsByClassName('cerrar')[0];
+
+// Abrir modal de inicio de sesión al hacer clic en el botón "Iniciar sesión"
+btnAbrirLogin.onclick = function () {
+    modalLogin.style.display = 'flex';
+}
+
+// Cerrar modal de inicio de sesión al hacer clic en la "X"
 spanCerrarLogin.onclick = function () {
     modalLogin.style.display = 'none';
 }
 
-// Cerrar modal al hacer clic fuera del contenido del modal
+// Variables para el modal de gestion de datos
+var modalGestionDatos = document.getElementById('modal-gestion-datos');
+var btnAbrirGestionDatos = document.getElementById('btn-abrir-gestion-datos');
+var spanCerrarGestionDatos = modalGestionDatos.getElementsByClassName('cerrar')[0];
+
+// Abril modal de gestion de datos
+btnAbrirGestionDatos.onclick = function () {
+    modalGestionDatos.style.display = 'flex';
+}
+
+// Cerrar modal de gestion de datos al hacer clic en la "X"
+spanCerrarGestionDatos.onclick = function () {
+    modalGestionDatos.style.display = 'none';
+}
+
+// Cerrar los modales al hacer clic fuera del contenido del modal
 window.onclick = function (event) {
     if (event.target == modalRegistro) {
         modalRegistro.style.display = 'none';
@@ -33,29 +51,40 @@ window.onclick = function (event) {
     if (event.target == modalLogin) {
         modalLogin.style.display = 'none';
     }
+    if (event.target == modalGestionDatos) {
+        modalGestionDatos.style.display = 'none';
+    }
 }
 
-// Función para registrar un usuario (demo)
-function registrarUsuario(event) {
-    event.preventDefault(); // Evita el envío del formulario
+// Función para registrar un usuario (simulación)
+document.getElementById('form-registro').addEventListener('submit', function (event) {
+    event.preventDefault(); // Evita el envío del formulario real
     var nombre = document.getElementById('nombre').value;
     var email = document.getElementById('email').value;
+
+    // Simulación del registro con un timeout
     setTimeout(() => {
         alert(`¡Registro exitoso! Se envió un correo para confirmar el registro a ${email}.`);
-        modalRegistro.style.display = 'none';
+        modalRegistro.style.display = 'none'; // Cerrar el modal
     }, 1000);
-}
+});
 
-// Función para iniciar sesión (demo)
-function iniciarSesion(event) {
-    event.preventDefault(); // Evita el envío del formulario
+// Función para iniciar sesión (simulación)
+document.getElementById('form-login').addEventListener('submit', function (event) {
+    event.preventDefault(); // Evita el envío del formulario real
     var email = document.getElementById('email-login').value;
     var password = document.getElementById('password-login').value;
+
+    // Simulación de inicio de sesión con un timeout
     setTimeout(() => {
-        alert(`¡Inicio de sesión exitoso! Bienvenido ${email}.`);
-        modalLogin.style.display = 'none';
+        if (email === "edgarnitola@gmail.com" && password === "12345") {
+            alert("Inicio de sesión exitoso.");
+        } else {
+            alert("Credenciales incorrectas.");
+        }
+        modalLogin.style.display = 'none'; // Cerrar el modal
     }, 1000);
-}
+});
 
 // Función para buscar productos por nombre
 function buscarProducto() {
@@ -89,12 +118,12 @@ function filtrarPorCategoria() {
     }
 }
 
-// Función básica para agregar un producto al carrito (solo demostración)
+// Función básica para agregar un producto al carrito (simulación)
 function agregarAlCarrito(nombreProducto) {
     alert(nombreProducto + " agregado al carrito.");
 }
 
-// Función para eliminar un producto del carrito (solo demostración)
+// Función para eliminar un producto del carrito (simulación)
 function eliminarDelCarrito(nombreProducto) {
     alert(nombreProducto + " eliminado del carrito.");
 }
