@@ -47,7 +47,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: #ffffff;
     font-size: 18px;
 }
 
@@ -69,7 +69,7 @@ nav ul li a:hover {
 /* Estilo general de los botones */
 .btn-registro {
     background-color: #006064;
-    color: white;
+    color: #ffffff;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -285,10 +285,10 @@ section img {
 /* Estilos para el footer */
 footer {
     background-color: #00acc1;
-    color: white;
+    color: #ffffff;
     text-align: center;
     padding: 10px;
-    position: fixed;
+    position: sticky;
     bottom: 0;
     width: 100%;
 }
