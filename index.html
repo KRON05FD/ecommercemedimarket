@@ -6,11 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Medimarket - Tu farmacia en línea</title>
-  <link rel="stylesheet" href="assets/css/index.css" /> <!-- link al archivo CSS de estilos -->
+  <link rel="stylesheet" href="assets/css/index.css" />
 </head>
 
 <body>
   <header>
+    <h1>Bienvenido a Medimarket</h1>
+    <p>Tu farmacia en línea de confianza</p>
+    <br>
     <nav>
       <ul>
         <li><a href="#inicio">Inicio</a></li>
@@ -25,9 +28,7 @@
           <img src="assets/img/person-circle.svg" alt="Icono de cuenta" class="icono-cuenta">
         </button>
       </div>
-    </nav>
-    <h1>Bienvenido a Medimarket</h1>
-    <p>Tu farmacia en línea de confianza</p>
+    </nav>  
   </header>
 
   <main>
@@ -40,7 +41,7 @@
     <section id="productos">
       <h2>Catálogo de productos</h2>
       <input type="text" id="buscador" placeholder="Buscar producto..." onkeyup="buscarProducto()" />
-      <label for="categoria">Categoría:</label>
+      <br>
       <select id="categoria" onchange="filtrarPorCategoria()">
         <option value="">Todas las categorías</option>
         <option value="Medicamentos">Medicamentos</option>
@@ -48,21 +49,54 @@
         <option value="Cuidado personal">Cuidado personal</option>
         <option value="Equipo médico">Equipo médico</option>
       </select>
-      <ul id="lista-productos">
-        <li data-categoria="Medicamentos">Medicamentos</li>
-        <li data-categoria="Vitaminas y suplementos">Vitaminas y suplementos</li>
-        <li data-categoria="Cuidado personal">Cuidado personal</li>
-        <li data-categoria="Equipo médico">Equipo médico</li>
-      </ul>
     </section>
 
-       <!-- Aqui esta el footer --> 
+    <section id="carrusel-productos">
+      <h2>Resultados de productos</h2>
+      <div class="carrusel">
+        <div id="lista-productos" class="productos-carrusel">
+          <div class="producto" data-categoria="Medicamentos">
+            <img src="assets/img/Paracetamol.jpg" alt="Paracetamol">
+            <h3>Paracetamol</h3>
+            <p>Precio: $10,000</p>
+            <p>Disponible</p>
+          </div>
+          <div class="producto" data-categoria="Medicamentos">
+            <img src="assets/img/Acetaminofen.jpg" alt="Acetaminofen">
+            <h3>Acetaminofen</h3>
+            <p>Precio: $2,500</p>
+            <p>Disponible</p>
+          </div>
+          <div class="producto" data-categoria="Vitaminas">
+            <img src="assets/img/vitaminaC.jpg" alt="Vitamina C">
+            <h3>Vitamina C</h3>
+            <p>Precio: $20,000</p>
+            <p>Disponible</p>
+          </div>
+          <div class="producto" data-categoria="Cuidado personal">
+            <img src="assets/img/balsamo-labial.jpg" alt="Bálsamo labial">
+            <h3>Bálsamo labial</h3>
+            <p>Precio: $5,000</p>
+            <p>No disponible</p>
+          </div>
+          <div class="producto" data-categoria="Equipo médico">
+            <img src="assets/img/termometro.jpg" alt="Termómetro">
+            <h3>Termómetro</h3>
+            <p>Precio: $15,000</p>
+            <p>Disponible</p>
+          </div>
+        </div>
+      </div>
+      <p id="mensaje-sin-resultados" style="display:none;">No hay productos disponibles</p>
+    </section>
+    <section id="contacto">
+      <h2>Contactanos</h2>
+    </section>
 
     <footer>
       <p>Medimarket &copy; 2024 - Todos los derechos reservados</p>
     </footer>
 
-    <!-- Modal de registro -->
     <div id="modal-registro" class="modal">
       <div class="modal-contenido">
         <span class="cerrar">&times;</span>
@@ -83,7 +117,6 @@
       </div>
     </div>
 
-    <!-- Modal de inicio de sesión -->
     <div id="modal-login" class="modal">
       <div class="modal-contenido">
         <span class="cerrar">&times;</span>
@@ -98,7 +131,6 @@
       </div>
     </div>
 
-    <!-- Modal para gestión de datos personales -->
     <div id="modal-gestion-datos" class="modal">
       <div class="modal-contenido">
         <span class="cerrar">&times;</span>
