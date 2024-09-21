@@ -249,26 +249,33 @@ section img {
 }
 
 /* Estilos para los formularios de registro, inicio de sesión y actualización de datos */
-#form-registro,
 #form-gestion-datos,
 #form-login {
     display: flex;
     flex-direction: column;
 }
 
-#form-registro label,
 #form-gestion-datos label,
 #form-login label {
     margin-bottom: 10px;
 }
 
-#form-registro input,
 #form-gestion-datos input,
 #form-login input {
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
     border: 1px solid #ddd;
+}
+#form-registro {
+    padding: 10px;
+    width: 60%;
+    max-width: 500px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 #form-registro button,
@@ -280,6 +287,7 @@ section img {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    display: flex;
 }
 
 /* Estilos para el footer */
