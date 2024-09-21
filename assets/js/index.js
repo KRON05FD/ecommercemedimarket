@@ -86,37 +86,36 @@ document.getElementById('form-login').addEventListener('submit', function (event
     }, 1000);
 });
 
-// Función para buscar productos por nombre
-function buscarProducto() {
-    var input = document.getElementById('buscador').value.toLowerCase();
-    var productos = document.getElementById('lista-productos').getElementsByTagName('li');
-
-    for (var i = 0; i < productos.length; i++) {
-        var producto = productos[i];
-        if (producto.innerHTML.toLowerCase().indexOf(input) > -1) {
-            producto.style.display = '';
-        } else {
-            producto.style.display = 'none';
-        }
-    }
-}
-
-// Función para filtrar productos por categoría
+// Función para filtrar por categoría
 function filtrarPorCategoria() {
-    var categoriaSeleccionada = document.getElementById('categoria').value;
-    var productos = document.getElementById('lista-productos').getElementsByTagName('li');
+    var categoria = document.getElementById("categoria").value;  // Obtiene el valor del select de categorías
+    var productos = document.querySelectorAll(".producto"); // Obtiene todos los productos
 
-    for (var i = 0; i < productos.length; i++) {
-        var producto = productos[i];
-        var categoriaProducto = producto.getAttribute('data-categoria');
+    productos.forEach(function(producto) {
+      // Si la categoría está vacía (es decir, "Todas las categorías") o el producto pertenece a la categoría seleccionada, se muestra.
+      if (categoria === "" || producto.getAttribute("data-categoria") === categoria) {
+        producto.style.display = "block";  // Muestra el producto
+      } else {
+        producto.style.display = "none";   // Oculta el producto si no coincide con la categoría
+      }
+    });
+  }
 
-        if (categoriaSeleccionada === "" || categoriaSeleccionada === categoriaProducto) {
-            producto.style.display = '';
-        } else {
-            producto.style.display = 'none';
-        }
-    }
-}
+  // Función para buscar un producto por su nombre
+  function buscarProducto() {
+    var input = document.getElementById("buscador").value.toLowerCase();  // Obtiene el valor del input de búsqueda y lo convierte a minúsculas
+    var productos = document.querySelectorAll(".producto");          // Obtiene todos los productos
+
+    productos.forEach(function(producto) {
+      var nombreProducto = producto.querySelector("h3").textContent.toLowerCase(); // Obtiene el nombre del producto en minúsculas
+      // Si el nombre del producto incluye el texto introducido en el buscador, se muestra.
+      if (nombreProducto.includes(input)) {
+        producto.style.display = "block";  // Muestra el producto si coincide con la búsqueda
+      } else {
+        producto.style.display = "none";   // Oculta el producto si no coincide
+      }
+    });
+  }
 
 // Función básica para agregar un producto al carrito (simulación)
 function agregarAlCarrito(nombreProducto) {
