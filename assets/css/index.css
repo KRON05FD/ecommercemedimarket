@@ -209,12 +209,99 @@ section img {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
 }
+/* Estilos para el botón del carrito de compras */
 
-/* Estilos para el carrito de compras */
-#carrito {
-    padding: 20px;
-    background-color: #eeeeee;
-    border-radius: 10px;
+
+.btn-carrito {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-carrito img {
+    width: 24px;
+    height: 24px;
+}
+
+.btn-carrito:hover img {
+    opacity: 0.7;
+}
+.btn-agregar-carrito {
+    background-color: #006064;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-agregar-carrito:hover {
+    background-color: #e64a19;
+}
+
+#contenido-carrito-de-compras table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #00acc1;
+}
+
+#contenido-carrito-de-compras table th {
+    color: white;
+    background-color: #00acc1;
+}
+
+#contenido-carrito-de-compras table th {
+    text-align: center;    
+}
+
+#contenido-carrito-de-compras table td {
+    padding: 3px;
+}
+
+#contenido-carrito-de-compras table td img {
+    width: 30px;
+    height: 30px;
+}
+
+.celda-cantidad{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.celda-valor{
+    text-align: right;  
+}
+
+.celda-accion{
+    text-align: center;
+}
+
+.celda-accion a{
+    color: #00acc1;
+}
+
+.celda-accion a:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.btn-modificar-cantidad {
+    background-color: #00acc1;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-modificar-cantidad:disabled {
+    background-color: #00acc1;
+    color: #ccc;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor:not-allowed;
 }
 
 /* Estilos para los modales */
