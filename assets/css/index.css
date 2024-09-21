@@ -226,6 +226,19 @@ section img {
 .btn-carrito:hover img {
     opacity: 0.7;
 }
+.btn-agregar-carrito {
+    background-color: #006064;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-agregar-carrito:hover {
+    background-color: #e64a19;
+}
+
 #contenido-carrito-de-compras table {
     border-collapse: collapse;
     width: 100%;
