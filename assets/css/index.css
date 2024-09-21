@@ -165,6 +165,15 @@ section img {
     color: #666;
 }
 
+.producto button{
+    background-color: #006064;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
 /* Estilos para el buscador y filtro de categorías */
 #buscador {
     padding: 10px;
