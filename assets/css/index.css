@@ -379,18 +379,6 @@ section img {
     font-size: 1rem;
 }
 
-#form-contacto textarea {
-    resize: none;
-    height: 120px;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    width: 100%;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    font-size: 1rem;
-}
-
 #form-gestion-datos button,
 #form-registro button,
 #form-contacto button,
