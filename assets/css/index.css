@@ -60,7 +60,7 @@ nav ul li a:hover {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 10px; /* Espacio entre botones */
+    gap: 10px;
     position: absolute;
     top: 20px;
     right: 20px;
@@ -112,26 +112,26 @@ section img {
 
 /* Estilos para el carrusel de productos */
 #carrusel-productos {
-    text-align: center; /* Centra el texto dentro de la sección */
-    padding: 20px 0;   /* Espaciado superior e inferior */
+    text-align: center;
+    padding: 20px 0;
 }
 
 .carrusel {
     display: flex;
-    justify-content: center; /* Centra los elementos dentro del carrusel */
-    overflow: hidden;        /* Oculta el desbordamiento lateral */
+    justify-content: center;
+    overflow: hidden;
 }
 
 #lista-productos {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ajusta automáticamente el número de columnas */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
-    justify-content: center; /* Centra los productos horizontalmente */
+    justify-content: center;
     padding: 0;
     margin-top: 20px;
-    max-width: 1200px; /* Ancho máximo del contenedor */
-    margin-left: auto; /* Centra horizontalmente */
-    margin-right: auto; /* Centra horizontalmente */
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Estilos para los productos */
@@ -140,14 +140,13 @@ section img {
     border-radius: 10px;
     padding: 15px;
     transition: background-color 0.3s ease;
-    text-align: center; /* Centra el contenido del producto */
+    text-align: center;
 }
 
 .producto:hover {
     background-color: #00acc1;
 }
 
-/* Estilos para el contenido dentro de los productos */
 .producto h3 {
     font-size: 1.2rem;
     color: #333;
@@ -324,12 +323,11 @@ section img {
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
-    max-width: 400px;
+    max-width: 600px;
     border-radius: 10px;
     text-align: left;
 }
 
-/* Estilo para los botones de cerrar modal */
 .cerrar {
     color: #aaa;
     float: right;
@@ -344,46 +342,76 @@ section img {
     cursor: pointer;
 }
 
-/* Estilos para los formularios de registro, inicio de sesión y actualización de datos */
+/* Estilos para formularios */
 #form-gestion-datos,
+#form-registro,
+#form-contacto,
 #form-login {
     display: flex;
     flex-direction: column;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
 }
 
 #form-gestion-datos label,
+#form-registro label,
+#form-contacto label,
 #form-login label {
     margin-bottom: 10px;
+    font-size: 1rem;
+    color: #333;
 }
 
 #form-gestion-datos input,
+#form-registro input,
+#form-contacto input,
 #form-login input {
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     border-radius: 5px;
     border: 1px solid #ddd;
-}
-#form-registro {
-    padding: 10px;
-    width: 60%;
-    max-width: 500px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
+    width: 100%;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
 }
 
-#form-registro button,
 #form-gestion-datos button,
+#form-registro button,
+#form-contacto button,
 #form-login button {
-    padding: 10px;
+    padding: 15px 20px;
     background-color: #00acc1;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    display: flex;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#form-gestion-datos button:hover,
+#form-registro button:hover,
+#form-contacto button:hover,
+#form-login button:hover {
+    background-color: #00838f;
+}
+
+#form-contacto h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#form-contacto p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 /* Estilos para el footer */

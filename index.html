@@ -63,19 +63,26 @@
             <p>Disponible</p>
             <button class="btn-agregar-carrito" onclick="carrito.agregar('Paracetamol', 10000, 'assets/img/Paracetamol.jpg')">Añadir al carrito</button>
           </div>
-          <div class="producto" data-categoria="Equipo médico">
-            <img src="assets/img/tensiometro_digital.jpg" alt="tensiometro_digital">
-            <h3>tensiometro_digital</h3>
-            <p><strong>Precio:</strong>$40,700</p>
-            <p>Disponible</p>
-            <button>Añadir al carrito</button>
-          </div>
           <div class="producto" data-categoria="Medicamentos">
             <img src="assets/img/Acetaminofen.jpg" alt="Acetaminofen">
             <h3>Acetaminofen</h3>
             <p><strong>Precio:</strong>$2,500</p>
             <p>Disponible</p>
             <button class="btn-agregar-carrito" onclick="carrito.agregar('Acetaminofen', 2500, 'assets/img/Acetaminofen.jpg')">Añadir al carrito</button>
+          </div>
+          <div class="producto" data-categoria="Vitaminas y suplementos">
+            <img src="assets/img/vitaminaC.jpg" alt="Vitamina C">
+            <h3>Vitamina C</h3>
+            <p><strong>Precio:</strong>$20,000</p>
+            <p>Disponible</p>
+            <button class="btn-agregar-carrito" onclick="carrito.agregar('Vitamina C', 20000, 'assets/img/vitaminaC.jpg')">Añadir al carrito</button>
+          </div>
+          <div class="producto" data-categoria="Medicamentos">
+            <img src="assets/img/Mylanta.jpg" alt="Mylanta">
+            <h3>Mylanta-Antiacido</h3>
+            <p><strong>Precio:</strong>$1,900</p>
+            <p>Disponible</p>
+            <button class="btn-agregar-carrito" onclick="carrito.agregar('Mylanta', 1900, 'assets/img/Mylanta.jpg')">Añadir al carrito</button>
           </div>
           <div class="producto" data-categoria="Cuidado personal">
             <img src="assets/img/balsamo-labial.jpg" alt="Bálsamo labial">
@@ -85,13 +92,12 @@
             <button class="btn-agregar-carrito" onclick="carrito.agregar('Bálsamo labial', 5000, 'assets/img/balsamo-labial.jpg')">Añadir al carrito</button>
           </div>
           <div class="producto" data-categoria="Vitaminas y suplementos">
-            <img src="assets/img/vitaminaC.jpg" alt="Vitamina C">
-            <h3>Vitamina C</h3>
-            <p><strong>Precio:</strong>$20,000</p>
+            <img src="assets/img/Ensure.jpg" alt="Ensure">
+            <h3>Ensure</h3>
+            <p><strong>Precio:</strong>$99,200</p>
             <p>Disponible</p>
-            <button class="btn-agregar-carrito" onclick="carrito.agregar('Vitamina C', 20000, 'assets/img/vitaminaC.jpg')">Añadir al carrito</button>
+            <button class="btn-agregar-carrito" onclick="carrito.agregar('Ensure', 99200, 'assets/img/Ensure.jpg')">Añadir al carrito</button>
           </div>
-          
           <div class="producto" data-categoria="Equipo médico">
             <img src="assets/img/termometro.jpg" alt="Termómetro">
             <h3>Termómetro</h3>
@@ -111,19 +117,24 @@
             <h3>Cepillo dental</h3>
             <p><strong>Precio:</strong>$5,000</p>
             <p>No disponible</p>
-            <button>Añadir al carrito</button>
+            <button class="btn-agregar-carrito" onclick="carrito.agregar('Cepillo dental', 5000, 'assets/img/Cepillo oral B.jpg')">Añadir al carrito</button>
+          </div>
+          <div class="producto" data-categoria="Equipo médico">
+            <img src="assets/img/tensiometro_digital.jpg" alt="tensiometro digital">
+            <h3>Tensiometro digital</h3>
+            <p><strong>Precio:</strong>$40,700</p>
+            <p>Disponible</p>
+            <button class="btn-agregar-carrito" onclick="carrito.agregar('tensiometro digital', 40700, 'assets/img/tensiometro_digital.jpg')">Añadir al carrito</button>
           </div>
         </div>
       </div>
       <p id="mensaje-sin-resultados" style="display:none;">No hay productos disponibles</p>
     </section>
-
     <section id="contacto">
       <div class="contacto">
+        <h2>Formulario de contacto</h2>
+        <p>Escríbenos y en breve nos pondremos en contacto contigo</p>
         <form id="form-registro" class="form" aling="center">
-          <h2>Formulario de contacto</h2>
-          <p>Escríbenos y en breve nos pondremos en contacto contigo</p>
-
           <label for="nombre">Nombre:</label>
           <input type="text" id="nombre" required><br>
           <label for="email">Email:</label>
@@ -133,7 +144,7 @@
           <label for="asunto">Asunto:</label>
           <input type="text" id="asunto" required><br>
           <label for="mensaje">Mensaje:</label>
-          <textarea name="mensaje" id="mensaje" required></textarea>
+          <input type="text" id="mensaje" required>
           <button type="submit">Enviar</button>
         </form>
       </div>
