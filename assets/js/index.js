@@ -58,6 +58,7 @@ window.onclick = function (event) {
     }
 }
 
+//4. Registro de cuentas de usuario:
 // Función para registrar un usuario (simulación)
 document.getElementById('form-registro').addEventListener('submit', function (event) {
     event.preventDefault(); // Evita el envío del formulario real
@@ -67,6 +68,19 @@ document.getElementById('form-registro').addEventListener('submit', function (ev
     // Simulación del registro con un timeout
     setTimeout(() => {
         alert(`¡Registro exitoso! Se envió un correo para confirmar el registro a ${email}.`);
+        modalRegistro.style.display = 'none'; // Cerrar el modal
+    }, 1000);
+});
+// Función para actualizar datos de un usuario (simulación)
+document.getElementById('modal-gestion-datos').addEventListener('submit', function (event) {
+    event.preventDefault(); // Evita el envío del formulario real
+    var nombre = document.getElementById('nombre-gestion').value;
+    var email = document.getElementById('direccion-gestion').value;
+    var email = document.getElementById('telefono-gestion').value;
+
+    // Simulación del registro con un timeout
+    setTimeout(() => {
+        alert(`¡Registro exitoso! Se actualizo la informacion correctamente.`);
         modalRegistro.style.display = 'none'; // Cerrar el modal
     }, 1000);
 });
@@ -87,7 +101,22 @@ document.getElementById('form-login').addEventListener('submit', function (event
         modalLogin.style.display = 'none'; // Cerrar el modal
     }, 1000);
 });
+// Función para enviar formulario de contacto de un usuario (simulación)
+document.getElementById('form-contacto').addEventListener('submit', function (event) {
+    event.preventDefault(); // Evita el envío del formulario real
+    var nombre = document.getElementById('nombre').value;
+    var email = document.getElementById('email').value;
+    var email = document.getElementById('telefono').value;
+    var email = document.getElementById('asunto').value;
+    var email = document.getElementById('mensaje').value;
 
+    // Simulación del envio con un timeout
+    setTimeout(() => {
+        alert(`¡Gracias por escribirnos! ${nombre}, pronto nos contactaremos contigo.`);
+        modalRegistro.style.display = 'none'; // Cerrar el modal
+    }, 1000);
+});
+// 1. Búsqueda básica de productos:
 // Función para filtrar por categoría
 function filtrarPorCategoria() {
     var categoria = document.getElementById("categoria").value;  // Obtiene el valor del select de categorías
@@ -119,6 +148,7 @@ function filtrarPorCategoria() {
     });
   }
 
+  //2. Carrito de compras:
   // Función básica para agregar un producto al carrito 
 function agregarAlCarrito(nombreProducto) {
     alert(nombreProducto + " agregado al carrito.");
