@@ -12,6 +12,8 @@ btnAbrirRegistro.onclick = function () {
 spanCerrarRegistro.onclick = function () {
     modalRegistro.style.display = 'none';
 }
+// variables del carrito de compras
+var btnAbrirModalCarrito = document.getElementById('btn-abrir-carrito');
 
 // Variables para el modal de inicio de sesión
 var modalLogin = document.getElementById('modal-login');
@@ -86,44 +88,186 @@ document.getElementById('form-login').addEventListener('submit', function (event
     }, 1000);
 });
 
-// Función para buscar productos por nombre
-function buscarProducto() {
-    var input = document.getElementById('buscador').value.toLowerCase();
-    var productos = document.getElementById('lista-productos').getElementsByTagName('li');
-
-    for (var i = 0; i < productos.length; i++) {
-        var producto = productos[i];
-        if (producto.innerHTML.toLowerCase().indexOf(input) > -1) {
-            producto.style.display = '';
-        } else {
-            producto.style.display = 'none';
-        }
-    }
-}
-
-// Función para filtrar productos por categoría
+// Función para filtrar por categoría
 function filtrarPorCategoria() {
-    var categoriaSeleccionada = document.getElementById('categoria').value;
-    var productos = document.getElementById('lista-productos').getElementsByTagName('li');
+    var categoria = document.getElementById("categoria").value;  // Obtiene el valor del select de categorías
+    var productos = document.querySelectorAll(".producto"); // Obtiene todos los productos
 
-    for (var i = 0; i < productos.length; i++) {
-        var producto = productos[i];
-        var categoriaProducto = producto.getAttribute('data-categoria');
+    productos.forEach(function(producto) {
+      // Si la categoría está vacía (es decir, "Todas las categorías") o el producto pertenece a la categoría seleccionada, se muestra.
+      if (categoria === "" || producto.getAttribute("data-categoria") === categoria) {
+        producto.style.display = "block";  // Muestra el producto
+      } else {
+        producto.style.display = "none";   // Oculta el producto si no coincide con la categoría
+      }
+    });
+  }
 
-        if (categoriaSeleccionada === "" || categoriaSeleccionada === categoriaProducto) {
-            producto.style.display = '';
-        } else {
-            producto.style.display = 'none';
-        }
-    }
-}
+  // Función para buscar un producto por su nombre
+  function buscarProducto() {
+    var input = document.getElementById("buscador").value.toLowerCase();  // Obtiene el valor del input de búsqueda y lo convierte a minúsculas
+    var productos = document.querySelectorAll(".producto");          // Obtiene todos los productos
 
-// Función básica para agregar un producto al carrito (simulación)
+    productos.forEach(function(producto) {
+      var nombreProducto = producto.querySelector("h3").textContent.toLowerCase(); // Obtiene el nombre del producto en minúsculas
+      // Si el nombre del producto incluye el texto introducido en el buscador, se muestra.
+      if (nombreProducto.includes(input)) {
+        producto.style.display = "block";  // Muestra el producto si coincide con la búsqueda
+      } else {
+        producto.style.display = "none";   // Oculta el producto si no coincide
+      }
+    });
+  }
+
+  // Función básica para agregar un producto al carrito 
 function agregarAlCarrito(nombreProducto) {
     alert(nombreProducto + " agregado al carrito.");
 }
 
-// Función para eliminar un producto del carrito (simulación)
+// Función para eliminar un producto del carrito 
 function eliminarDelCarrito(nombreProducto) {
     alert(nombreProducto + " eliminado del carrito.");
 }
+
+  var modalCarrito = document.getElementById('modal-carrito-de-compras');
+  var spanCerrarCarrito = document.getElementById('cerrar-carrito');
+  
+  // Abrir modal de carrito al hacer clic en el botón de "Carrito"
+  btnAbrirModalCarrito.onclick = function () {
+  
+      carrito.mostrarContenido();
+      modalCarrito.style.display = 'flex';
+  }
+  
+  spanCerrarCarrito.onclick = function () {
+      modalCarrito.style.display = 'none';
+  }
+  
+  let productos = sessionStorage.getItem('productos-carrito');
+  productos = productos != null ? JSON.parse(productos): [];
+  
+  const carrito = {
+      productos
+  };
+  
+  carrito.mostrarContenido = () => {
+      const contenidoCarrito = document.getElementById('contenido-carrito-de-compras');
+      contenidoCarrito.innerHTML = "";
+  
+      if (carrito.productos.length > 0){
+          const tabla = document.createElement('table');
+  
+          const encabezados = ["", "Producto", "Cantidad", "Valor unitario", "Valor total",""];
+          const filaEncabezados = document.createElement('tr');
+          encabezados.forEach(encabezado => {
+              const th = document.createElement('th');
+              th.textContent = encabezado;
+              filaEncabezados.appendChild(th);
+          });
+          tabla.appendChild(filaEncabezados);
+  
+          carrito.productos.forEach(producto => {
+              const fila = document.createElement('tr');
+  
+              let td = document.createElement('td');
+              let img = document.createElement('img');
+              img.src = producto.imagen;
+              td.appendChild(img);
+              fila.appendChild(td);
+  
+              td = document.createElement('td');
+              td.textContent = producto.producto;
+              fila.appendChild(td);
+  
+              td = document.createElement('td');
+              td.classList = "celda-cantidad";
+  
+              const btnDisminuir = document.createElement('button');
+              btnDisminuir.classList = "btn-modificar-cantidad";
+              if (producto.cantidad > 1){
+                  btnDisminuir.onclick = () => carrito.modificarCantidad(producto, -1);
+              }
+              else {
+                  btnDisminuir.disabled = true;
+              }
+              btnDisminuir.textContent = "-1";
+              td.appendChild(btnDisminuir);
+  
+              const etiquetaCantidad = document.createElement('span');
+              etiquetaCantidad.textContent = producto.cantidad;
+              td.appendChild(etiquetaCantidad);
+  
+              const btnAumentar = document.createElement('button');
+              btnAumentar.classList = "btn-modificar-cantidad";
+              btnAumentar.onclick = () => carrito.modificarCantidad(producto, 1);
+              btnAumentar.textContent = "+1";
+              td.appendChild(btnAumentar);
+  
+              fila.appendChild(td);
+  
+              td = document.createElement('td');
+              td.classList = "celda-valor";
+              td.textContent = "$"+producto.valor;
+              fila.appendChild(td);
+  
+              td = document.createElement('td');
+              td.classList = "celda-valor";
+              td.textContent = "$"+producto.cantidad * producto.valor;
+              fila.appendChild(td);
+              td = document.createElement('td');
+  
+              const btnBorrar = document.createElement('a');
+              td.classList = "celda-accion";
+              btnBorrar.textContent = "Eliminar";
+              btnBorrar.onclick = () => carrito.borrar(producto);
+              td.appendChild(btnBorrar);
+              fila.appendChild(td);
+  
+              tabla.appendChild(fila);
+          });
+          contenidoCarrito.appendChild(tabla);
+  
+          const total = document.createElement('h3');
+          total.textContent = "Total del carrito $" + carrito.calcularTotal();
+          contenidoCarrito.appendChild(total);
+      }
+  else {
+      const mensaje = document.createElement('p');
+      mensaje.innerHTML = "No se han seleccionado productos";
+      contenidoCarrito.appendChild(mensaje);
+  }
+  
+  }
+  
+  carrito.agregar = (producto, valor, imagen) => {
+      productoAgregado = carrito.productos.find(x => x.producto == producto);
+      if (productoAgregado){
+          productoAgregado.cantidad++;
+      } else {
+          carrito.productos.push({
+              producto,
+              valor,
+              cantidad: 1,
+              imagen
+          });
+      }
+      sessionStorage.setItem('productos-carrito', JSON.stringify(carrito.productos));
+  }
+  
+  carrito.borrar = (producto) => {
+      carrito.productos = carrito.productos.filter(x => x != producto);
+      sessionStorage.setItem('productos-carrito', JSON.stringify(carrito.productos));
+      carrito.mostrarContenido();
+  }
+  
+  carrito.modificarCantidad = (producto, cantidad) => {
+      producto.cantidad += cantidad;
+      sessionStorage.setItem('productos-carrito', JSON.stringify(carrito.productos));
+      carrito.mostrarContenido();
+  }
+  
+  carrito.calcularTotal = () => {
+      let total = 0;
+      carrito.productos.forEach(producto => total += producto.valor * producto.cantidad);
+      return total;
+  }
